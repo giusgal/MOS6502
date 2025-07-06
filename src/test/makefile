@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra -std=c++11
+CXXFLAGS = -Wall -Wextra -std=c++11 -O3
 PREPROP = -D_NO_DELAY_
 
 CPU_DIR = ../cpu
