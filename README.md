@@ -15,7 +15,7 @@ Mos 6502 emulator in C++.
 ## Getting started
 
 The MOS6502 class exposes the following functions:
-- `MOS6502(fWrite w, fRead r)`: The class constructor takes as arguments two function pointers, namely `void (*fWrite)(uint16_t, uint8_t)` and `uint8_t (*fRead)(uint16_t)`. These functions are used by the MOS6502 object to access memory (or virtual memory-mapped devices), see below for an example
+- `MOS6502(fWrite w, fRead r)`: The class constructor takes as arguments two function objects, namely `std::function<void(uint16_t, uint8_t)>` (for write operations) and `std::function<uint8_t(uint16_t)>` (for read operations). These functions are used by the MOS6502 object to access memory (or virtual memory-mapped devices), see below for an example
 - `void IRQ()`: Generates a maskable interrupt
 - `void NMI()`: Generates a non-maskable interrupt
 - `void execute(uint16_t init_PC, uint16_t end_PC)`: Executes code in the address range [init_PC, end_PC] (endpoints included)
